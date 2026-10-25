@@ -885,16 +885,11 @@ It is the combination of:
 
 ### Team
 
-**B. Sharon Preethi**  
-Team Lead
-
+**B. Sharon Preethi**
 
 **T. Priyanjali**  
-Team Member
 
 **P. Poojadevi**  
-Team Member
-
 
 ---
 
