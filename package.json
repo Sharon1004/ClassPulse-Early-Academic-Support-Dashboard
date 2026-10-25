@@ -1,0 +1,16 @@
+{
+  "name": "classpulse-ai",
+  "version": "1.1.0",
+  "private": true,
+  "description": "ClassPulse - explainable early-warning academic support dashboard (Innovators Conclave 2026)",
+  "engines": { "node": ">=18.11" },
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n server,client -c cyan,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "test": "npm test --prefix server",
+    "render-build": "npm install --prefix server --omit=dev && npm install --prefix client && npm run build --prefix client"
+  },
+  "devDependencies": { "concurrently": "^8.2.2" }
+}

@@ -1,0 +1,23 @@
+# One-click free deploy on Render: https://render.com/docs/blueprint-spec
+# The Express server serves both the API and the built React app, so a single free web service is enough.
+services:
+  - type: web
+    name: classpulse
+    runtime: node
+    plan: free
+    buildCommand: npm run render-build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 20
+      - key: JWT_SECRET
+        generateValue: true      # Render creates a long random secret for you
+      - key: DEMO_PASSWORD
+        sync: false              # you choose it when you create the blueprint (shared by the demo logins)
+      - key: MONGODB_URI
+        sync: false              # optional but recommended: MongoDB Atlas free (M0) so data survives restarts
+      - key: MONGODB_DB
+        value: classpulse
